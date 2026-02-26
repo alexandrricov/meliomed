@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", sans-serif;
+
+  /* Background */
+  --color-bg-page: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-header: #ffffffcc;
+  --color-bg-progress-track: #eff3f9;
+
+  /* Text */
+  --color-text-primary: #28303c;
+  --color-text-secondary: #697282;
+  --color-text-dark: #2d3541;
+  --color-text-date-label: #d7e0f0;
+
+  /* Status */
+  --color-status-optimal: #009966;
+  --color-status-optimal-bg: #00bba21a;
+  --color-status-elevated: #f55f00;
+  --color-status-elevated-bg: #fff7ed;
+  --color-status-elevated-border: #f55f004d;
+  --color-status-scheduled: #318eee;
+  --color-status-scheduled-bg: #318eee1a;
+  --color-status-scheduled-border: #318eee4d;
+  --color-status-planning: #8922fa;
+  --color-status-planning-bg: #faf5ff;
+  --color-status-planning-border: #8922fa4d;
+  --color-status-danger: #ec0040;
+
+  /* Accent */
+  --color-accent-blue-light: #dbeafe;
+  --color-accent-green-light: #d0fae5;
+  --color-accent-purple-light: #f3e8ff;
+
+  /* Structural */
+  --color-border-divider: #d7e0f0;
+  --color-date-box-bg: #28303c;
+
+  /* Shadows */
+  --shadow-card: 0 4px 16px rgba(0, 67, 195, 0.16);
+  --shadow-chart: 0 5px 15px rgba(129, 212, 254, 0.2);
+  --shadow-cta: 0 4px 16px rgba(136, 235, 144, 0.4);
+
+  /* Border Radius */
+  --radius-card: 24px;
+  --radius-inner: 8px;
+}

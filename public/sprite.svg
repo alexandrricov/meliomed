@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+  style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon__drop" viewBox="0 0 32 32" fill="none">
+    <path d="M24.6165 15.7564L16 1.25L7.3835 15.7564C6.52675 17.231 6 18.9217 6 20.75C6 26.2727 10.4771 30.75 16 30.75C21.5229 30.75 26 26.2727 26 20.75C26 18.9217 25.4733 17.231 24.6165 15.7564Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon__trend-up" viewBox="0 0 24 24" fill="none">
+    <g clip-path="url(#trend-up__clip0_9_537)">
+<path d="M23.0781 5.30539L11.9957 16.348L8.33045 12.6959L1 20" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.0391 8.85938V5.30527H19.4841" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="trend-up__clip0_9_537">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+  </symbol>
+  <symbol id="icon__heart" viewBox="0 0 32 32" fill="none">
+    <g clip-path="url(#heart__clip0_9_541)">
+<mask id="heart__mask0_9_541" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<path d="M0 1.90735e-06H32V32H0V1.90735e-06Z" fill="white"/>
+</mask>
+<g mask="url(#heart__mask0_9_541)">
+<path d="M23.3057 3.09964C19.93 3.09964 17.0661 5.4667 16 8.76545C14.9341 5.4667 12.07 3.09964 8.6944 3.09964C4.41046 3.09964 0.967333 6.90501 0.937645 11.5991C0.88352 20.1738 16 28.9004 16 28.9004C16 28.9004 31.0082 20.1738 31.0623 11.5991C31.092 6.90501 27.5896 3.09964 23.3057 3.09964Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="heart__clip0_9_541">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+  </symbol>
+  <symbol id="icon__trend-down" viewBox="0 0 24 24" fill="none">
+    <path d="M23.0781 20L11.9957 8.95745L8.33045 12.6095L1 5.30542" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.0393 16.4458V19.9999H19.4844" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon__pulse" viewBox="0 0 32 32" fill="none">
+    <g clip-path="url(#pulse__clip0_9_553)">
+<path d="M0.46875 16.536H9.25125C9.6895 16.536 10.0769 16.2512 10.2076 15.8329L11.9446 10.2746C12.0968 9.78751 12.7947 9.81327 12.9107 10.3103L15.566 21.69C15.6831 22.1919 16.3906 22.2112 16.5348 21.7164L19.0328 13.1519C19.1726 12.6728 19.8503 12.6702 19.9937 13.1482L20.7957 15.8219C20.9228 16.2458 21.3129 16.536 21.7554 16.536H31.5312" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="pulse__clip0_9_553">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+  </symbol>
+  <symbol id="icon__arrow-right" viewBox="0 0 24 24" fill="none">
+    <path d="M20.6447 11.9718L3 12" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.1041 9.48627L20.6172 11.9994L18.1035 14.5131" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon__bell" viewBox="0 0 24 24" fill="none">
+    <mask id="bell__mask0_9_587" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22">
+<path d="M1 1H23V23H1V1Z" fill="white"/>
+</mask>
+<g mask="url(#bell__mask0_9_587)">
+<path d="M13.2871 2.93359C13.2871 3.6455 12.71 4.22266 11.998 4.22266C11.2861 4.22266 10.709 3.6455 10.709 2.93359C10.709 2.22169 11.2861 1.64453 11.998 1.64453C12.71 1.64453 13.2871 2.22169 13.2871 2.93359Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M18.4434 14.4689V10.668C18.4434 7.10831 15.5577 4.22265 11.998 4.22265C8.43839 4.22265 5.55273 7.10831 5.55273 10.668V14.4689C5.55273 15.3522 5.0537 16.1597 4.26367 16.5547C3.47365 16.9497 2.97461 17.7572 2.97461 18.6404V19.4773C2.97461 19.643 3.10892 19.7773 3.27461 19.7773H20.7215C20.8872 19.7773 21.0215 19.643 21.0215 19.4773V18.6404C21.0215 17.7572 20.5224 16.9497 19.7324 16.5547C18.9424 16.1597 18.4434 15.3522 18.4434 14.4689Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M13.8216 19.7773C13.8928 19.979 13.9316 20.1959 13.9316 20.4219C13.9316 21.4898 13.0659 22.3555 11.998 22.3555C10.9301 22.3555 10.0645 21.4898 10.0645 20.4219C10.0645 20.1959 10.1032 19.979 10.1745 19.7773" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+</g>
+  </symbol>
+  <symbol id="icon__user" viewBox="0 0 24 24" fill="none">
+    <mask id="user__mask0_9_596" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="20" height="20">
+<path d="M2 2H22V22H2V2Z" fill="white"/>
+</mask>
+<g mask="url(#user__mask0_9_596)">
+<path d="M12 12C8.58648 12 5.60633 13.8539 4.01172 16.6094C5.60633 19.3648 8.58648 21.2188 12 21.2188C15.4135 21.2188 18.3937 19.3648 19.9883 16.6094C18.3937 13.8539 15.4135 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.6094 7.39062C16.6094 4.84496 14.5457 2.78125 12 2.78125C9.45434 2.78125 7.39062 4.84496 7.39062 7.39062C7.39062 9.93629 9.45434 12 12 12C14.5457 12 16.6094 9.93629 16.6094 7.39062Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="icon__nav-dashboard" viewBox="0 0 24 24" fill="none">
+    <mask id="nav-dashboard__mask0_0_552" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="20" height="20">
+<path d="M2 2H22V22H2V2Z" fill="white"/>
+</mask>
+<g mask="url(#nav-dashboard__mask0_0_552)">
+<path d="M10.5938 10.5937C10.5938 11.4567 9.89418 12.1562 9.03125 12.1562H4.34375C3.48082 12.1562 2.78125 11.4567 2.78125 10.5937V4.34375C2.78125 3.48082 3.48082 2.78125 4.34375 2.78125H9.03125C9.89418 2.78125 10.5938 3.48082 10.5938 4.34375V10.5937Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M21.2188 19.6562C21.2188 20.5192 20.5192 21.2188 19.6562 21.2188H14.9688C14.1058 21.2188 13.4062 20.5192 13.4062 19.6562V13.4062C13.4062 12.5433 14.1058 11.8437 14.9688 11.8437H19.6562C20.5192 11.8437 21.2188 12.5433 21.2188 13.4062V19.6562Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M10.5938 19.6562C10.5938 20.5192 9.89418 21.2188 9.03125 21.2188H4.34375C3.48082 21.2188 2.78125 20.5192 2.78125 19.6562V16.5312C2.78125 15.6683 3.48082 14.9688 4.34375 14.9688H9.03125C9.89418 14.9688 10.5938 15.6683 10.5938 16.5312V19.6562Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M21.2188 7.46875C21.2188 8.33168 20.5192 9.03125 19.6562 9.03125H14.9688C14.1058 9.03125 13.4062 8.33168 13.4062 7.46875V4.34375C13.4062 3.48082 14.1058 2.78125 14.9688 2.78125H19.6562C20.5192 2.78125 21.2188 3.48082 21.2188 4.34375V7.46875Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"/>
+</g>
+  </symbol>
+  <symbol id="icon__nav-ai" viewBox="0 0 24 24" fill="none">
+    <mask id="nav-ai__mask0_0_569" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="20" height="20">
+<path d="M2 2H22V22H2V2Z" fill="white"/>
+</mask>
+<g mask="url(#nav-ai__mask0_0_569)">
+<path d="M21.2188 5.125V15.8216C21.2188 17.116 20.1694 18.1654 18.875 18.1654H10.746C10.5527 18.1654 10.3672 18.2422 10.2304 18.3789L7.70883 20.9005C7.50512 21.1043 7.22875 21.2188 6.94059 21.2188C6.34059 21.2188 5.85418 20.7323 5.85418 20.1323V18.8945C5.85418 18.4918 5.52773 18.1654 5.125 18.1654C3.83059 18.1654 2.78125 17.116 2.78125 15.8216V5.125C2.78125 3.83059 3.83059 2.78125 5.125 2.78125H18.875C20.1694 2.78125 21.2188 3.83059 21.2188 5.125Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="icon__nav-data" viewBox="0 0 24 24" fill="none">
+    <path d="M22 22H5.38983C3.51767 22 2 20.4823 2 18.6102V2" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.08481 18.6102C6.14875 18.6102 5.38989 17.8513 5.38989 16.9153V10.1356C5.38989 9.19953 6.14875 8.44067 7.08481 8.44067C8.02087 8.44067 8.77972 9.19953 8.77972 10.1356V16.9153C8.77972 17.8513 8.02087 18.6102 7.08481 18.6102Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.6949 18.6102C12.7589 18.6102 12 17.8513 12 16.9153V5.05087C12 4.11481 12.7589 3.35596 13.6949 3.35596C14.631 3.35596 15.3898 4.11481 15.3898 5.05087V16.9153C15.3898 17.8513 14.631 18.6102 13.6949 18.6102Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.305 18.6102C19.369 18.6102 18.6101 17.8514 18.6101 16.9153V13.5255C18.6101 12.5894 19.369 11.8306 20.305 11.8306C21.2411 11.8306 21.9999 12.5894 21.9999 13.5255V16.9153C21.9999 17.8514 21.2411 18.6102 20.305 18.6102Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon__nav-profile" viewBox="0 0 24 24" fill="none">
+    <mask id="nav-profile__mask0_0_602" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22">
+<path d="M1 1H23V23H1V1Z" fill="white"/>
+</mask>
+<g mask="url(#nav-profile__mask0_0_602)">
+<path d="M22.3555 12C22.3555 17.7192 17.7191 22.3555 12 22.3555C6.28073 22.3555 1.64453 17.7192 1.64453 12C1.64453 6.28073 6.28073 1.64453 12 1.64453C17.7191 1.64453 22.3555 6.28073 22.3555 12Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.1423 10.6193C16.1423 12.9069 14.2879 14.7615 12.0001 14.7615C9.71231 14.7615 7.85791 12.9069 7.85791 10.6193C7.85791 8.33167 9.71231 6.47714 12.0001 6.47714C14.2879 6.47714 16.1423 8.33167 16.1423 10.6193Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.82153 20.3112C6.15282 17.1916 8.79248 14.7614 11.9999 14.7614C15.2074 14.7614 17.847 17.1917 18.1781 20.3113" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="icon__tab-list" viewBox="0 0 24 24" fill="none">
+    <path d="M9.14258 4.14282H22.714" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.14258 12H22.714" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.14258 19.8572H22.714" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.4285 6.28572C4.61197 6.28572 5.57136 5.32633 5.57136 4.14286C5.57136 2.95939 4.61197 2 3.4285 2C2.24504 2 1.28564 2.95939 1.28564 4.14286C1.28564 5.32633 2.24504 6.28572 3.4285 6.28572Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.4285 14.1429C4.61197 14.1429 5.57136 13.1835 5.57136 12C5.57136 10.8166 4.61197 9.85718 3.4285 9.85718C2.24504 9.85718 1.28564 10.8166 1.28564 12C1.28564 13.1835 2.24504 14.1429 3.4285 14.1429Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.4285 22.0001C4.61197 22.0001 5.57136 21.0407 5.57136 19.8572C5.57136 18.6737 4.61197 17.7144 3.4285 17.7144C2.24504 17.7144 1.28564 18.6737 1.28564 19.8572C1.28564 21.0407 2.24504 22.0001 3.4285 22.0001Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon__tab-calendar" viewBox="0 0 24 24" fill="none">
+    <mask id="tab-calendar__mask0_0_252" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22">
+<path d="M1 1H23V23H1V1Z" fill="white"/>
+</mask>
+<g mask="url(#tab-calendar__mask0_0_252)">
+<path d="M22.1406 4.30859H1.85938V21.3242H22.1406V4.30859Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.98438 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.0156 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.85938 9.37891H22.1406" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="icon__calendar" viewBox="0 0 24 24" fill="none">
+    <mask id="calendar__mask0_0_394" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22">
+<path d="M1 1H23V23H1V1Z" fill="white"/>
+</mask>
+<g mask="url(#calendar__mask0_0_394)">
+<path d="M22.1406 4.30859H1.85938V21.3242H22.1406V4.30859Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.98438 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.0156 2.67578V5.94141" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.85938 9.37891H22.1406" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+  </symbol>
+  <symbol id="icon__hamburger" viewBox="0 0 24 24" fill="none">
+    <path d="M1 4H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M1 12H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M1 20H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+</svg>
