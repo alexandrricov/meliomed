@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router";
 import { Icon } from "@/components/ui/icon";
 import { navItems } from "@/data/mock-dashboard";
 import { useI18n } from "@/hooks/useI18n";
-import { useTheme } from "@/hooks/useTheme";
 
 function Logo({ compact = false }: { compact?: boolean }) {
   const boxSize = compact ? 36 : 40;
@@ -27,25 +26,6 @@ function Logo({ compact = false }: { compact?: boolean }) {
         melio
       </span>
     </div>
-  );
-}
-
-function ThemeToggle() {
-  const { resolved, setTheme } = useTheme();
-  const { t } = useI18n();
-  const isDark = resolved === "dark";
-
-  return (
-    <button
-      type="button"
-      aria-label={isDark ? t("Switch to light theme") : t("Switch to dark theme")}
-      className="text-text-secondary hover:text-text-primary p-1 transition-colors"
-      onClick={() => {
-        setTheme(isDark ? "light" : "dark");
-      }}
-    >
-      <Icon name={isDark ? "sun" : "moon"} size={24} />
-    </button>
   );
 }
 
@@ -106,7 +86,6 @@ export function DashboardHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-4">
-          <ThemeToggle />
           <NotificationBell />
 
           <div className="bg-border-divider h-10 w-px" aria-hidden="true" />
@@ -132,7 +111,6 @@ export function DashboardHeader() {
         <Logo compact />
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
           <NotificationBell />
           <button type="button" aria-label={t("Open menu")} className="p-1">
             <Icon name="hamburger" size={24} className="text-text-primary" />
