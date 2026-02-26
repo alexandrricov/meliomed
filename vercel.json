@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://office.melio.med/api/:path*" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        { "key": "origin", "value": "https://app.melio.med" },
+        { "key": "referer", "value": "https://app.melio.med/" }
+      ]
+    }
+  ]
+}

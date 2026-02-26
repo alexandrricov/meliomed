@@ -6,7 +6,7 @@ import { LoginPage } from "@/pages/login";
 
 export function AppRouter() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter>
       <Routes>
         {/* Public routes — accessible without auth */}
         <Route
