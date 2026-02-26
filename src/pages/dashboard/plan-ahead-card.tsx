@@ -1,10 +1,21 @@
-import { Icon } from "@/components/ui/icon";
+import { useState } from "react";
+import type { TabItem } from "@/components/ui/tab-switcher";
+import { TabSwitcher } from "@/components/ui/tab-switcher";
 import { appointments } from "@/data/mock-dashboard";
 import { useI18n } from "@/hooks/useI18n";
 import { AppointmentRow } from "./appointment-row";
+import { CalendarView } from "./calendar-view";
+
+type ViewMode = "list" | "calendar";
+
+const viewTabs: TabItem<ViewMode>[] = [
+  { value: "list", label: "List", icon: "tab-list" },
+  { value: "calendar", label: "Calendar", icon: "tab-calendar" },
+];
 
 export function PlanAheadCard() {
   const { t } = useI18n();
+  const [view, setView] = useState<ViewMode>("list");
 
   return (
     <section
@@ -21,37 +32,26 @@ export function PlanAheadCard() {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div role="tablist" aria-label={t("View mode")} className="flex gap-2">
-          <button
-            type="button"
-            role="tab"
-            aria-selected="true"
-            className="rounded-inner border-border-divider bg-status-optimal-bg text-status-optimal flex flex-1 items-center justify-center gap-2 border px-3 py-2 font-semibold lg:flex-none"
-          >
-            <Icon name="tab-list" size={24} />
-            {t("List")}
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected="false"
-            className="rounded-inner text-text-secondary flex flex-1 items-center justify-center gap-2 px-3 py-2 font-semibold lg:flex-none"
-          >
-            <Icon name="tab-calendar" size={24} />
-            {t("Calendar")}
-          </button>
-        </div>
+        <TabSwitcher
+          items={viewTabs}
+          value={view}
+          onChange={setView}
+          ariaLabel={t("View mode")}
+        />
       </div>
 
-      <div className="mt-4 flex flex-col gap-4">
-        {appointments.map((appointment) => (
-          <AppointmentRow
-            key={`${appointment.month}-${appointment.day}`}
-            appointment={appointment}
-          />
-        ))}
-      </div>
+      {view === "list" && (
+        <div className="mt-4 flex flex-col gap-4">
+          {appointments.map((appointment) => (
+            <AppointmentRow
+              key={`${appointment.month}-${appointment.day}`}
+              appointment={appointment}
+            />
+          ))}
+        </div>
+      )}
+
+      {view === "calendar" && <CalendarView />}
     </section>
   );
 }

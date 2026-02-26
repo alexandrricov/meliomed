@@ -1,6 +1,7 @@
 import type {
   Appointment,
   Biomarker,
+  CalendarEvent,
   HealthMetric,
   NavItem,
   StatItem,
@@ -136,6 +137,33 @@ export const appointments: Appointment[] = [
     badge: "planning",
     badgeLabel: "Planning",
     hasCta: false,
+  },
+];
+
+export const calendarEvents: CalendarEvent[] = [
+  {
+    day: 11,
+    badge: "scheduled",
+    title: "Quarterly Metabolic Panel",
+    badgeLabel: "Scheduled",
+  },
+  {
+    day: 11,
+    badge: "planning",
+    title: "Anticipated Annual Review",
+    badgeLabel: "Planning",
+  },
+  {
+    day: 11,
+    badge: "pending",
+    title: "Nutritionist Check-in (Virtual)",
+    badgeLabel: "Pending",
+  },
+  {
+    day: 17,
+    badge: "scheduled",
+    title: "Quarterly Metabolic Panel",
+    badgeLabel: "Scheduled",
   },
 ];
 

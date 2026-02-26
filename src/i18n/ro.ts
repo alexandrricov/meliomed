@@ -83,6 +83,12 @@ const ro = {
   "Confirm Appointment": "Confirmă programarea",
   "{label}: {title}": "{label}: {title}",
 
+  // Calendar view
+  "Upcoming this month": "Programări luna aceasta",
+  "Previous month": "Luna anterioară",
+  "Next month": "Luna următoare",
+  "June 2023": "Iunie 2023",
+
   // User page
   "Appearance": "Aspect",
   "Dark theme": "Temă întunecată",

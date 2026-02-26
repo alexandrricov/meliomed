@@ -53,6 +53,13 @@ export interface Appointment {
   ctaLabel?: TranslationKey;
 }
 
+export interface CalendarEvent {
+  day: number;
+  badge: BadgeVariant;
+  title: TranslationKey;
+  badgeLabel: TranslationKey;
+}
+
 export interface NavItem {
   label: TranslationKey;
   iconName: IconName;

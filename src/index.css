@@ -39,6 +39,7 @@
 
   /* Structural */
   --color-border-divider: var(--border-divider);
+  --color-border-cell: var(--border-cell);
   --color-date-box-bg: var(--date-box-bg);
 
   /* Shadows */
@@ -191,6 +192,7 @@
   --accent-purple-light: #f3e8ff;
 
   --border-divider: #d7e0f0;
+  --border-cell: #f9fafb;
   --date-box-bg: #28303c;
 
   --shadow-card-value: 0 4px 16px rgba(0, 67, 195, 0.16);
@@ -242,6 +244,7 @@
   --accent-purple-light: #201435;
 
   --border-divider: #242a38;
+  --border-cell: #242a38;
   --date-box-bg: #242837;
 
   --shadow-card-value: 0 1px 3px rgba(0, 0, 0, 0.4),
