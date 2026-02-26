@@ -1,5 +1,7 @@
+import { Link, useLocation } from "react-router";
 import { Icon } from "@/components/ui/icon";
 import { navItems } from "@/data/mock-dashboard";
+import { useI18n } from "@/hooks/useI18n";
 import { useTheme } from "@/hooks/useTheme";
 
 function Logo({ compact = false }: { compact?: boolean }) {
@@ -20,7 +22,7 @@ function Logo({ compact = false }: { compact?: boolean }) {
         <span className={mSize}>M</span>
       </div>
       <span
-        className={`${brandSize} text-text-primary leading-[38px] font-extrabold`}
+        className={`${brandSize} text-text-primary leading-9.5 font-extrabold`}
       >
         melio
       </span>
@@ -30,12 +32,13 @@ function Logo({ compact = false }: { compact?: boolean }) {
 
 function ThemeToggle() {
   const { resolved, setTheme } = useTheme();
+  const { t } = useI18n();
   const isDark = resolved === "dark";
 
   return (
     <button
       type="button"
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-label={isDark ? t("Switch to light theme") : t("Switch to dark theme")}
       className="text-text-secondary hover:text-text-primary p-1 transition-colors"
       onClick={() => {
         setTheme(isDark ? "light" : "dark");
@@ -47,10 +50,12 @@ function ThemeToggle() {
 }
 
 function NotificationBell() {
+  const { t } = useI18n();
+
   return (
     <button
       type="button"
-      aria-label="Notifications, 1 unread"
+      aria-label={t("Notifications, {count} unread", { count: 1 })}
       className="relative p-1"
     >
       <Icon name="bell" size={24} className="text-text-secondary" />
@@ -62,39 +67,41 @@ function NotificationBell() {
 }
 
 export function DashboardHeader() {
+  const { pathname } = useLocation();
+  const { t } = useI18n();
+
   return (
     <header className="border-border-divider bg-bg-header sticky top-0 z-50 border-b backdrop-blur-[34px]">
       {/* Desktop header */}
-      <div className="mx-auto hidden h-16 max-w-[1440px] items-center gap-4 px-[120px] lg:flex">
+      <div className="mx-auto hidden h-16 max-w-360 items-center gap-4 px-30 lg:flex">
         <Logo />
 
-        <nav aria-label="Main navigation" className="ml-8">
-          <ul role="menubar" className="flex gap-2">
-            {navItems.map((item) => (
-              <li key={item.label} role="none">
-                <a
-                  href={item.href}
-                  role="menuitem"
-                  aria-current={item.active ? "page" : undefined}
-                  className={`rounded-inner flex items-center gap-2 px-3 py-2 font-semibold transition-colors ${
-                    item.active
-                      ? "bg-status-optimal-bg text-status-optimal"
-                      : "text-text-secondary hover:text-text-primary"
-                  }`}
-                >
-                  <Icon
-                    name={item.iconName}
-                    size={24}
-                    className={
-                      item.active
+        <nav aria-label={t("Main navigation")} className="ml-8">
+          <ul role="menubar" className="sliding-nav">
+            {navItems.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+
+              return (
+                <li key={item.href} role="none">
+                  <Link
+                    to={item.href}
+                    role="menuitem"
+                    aria-current={active ? "page" : undefined}
+                    className={`flex items-center gap-2 rounded-inner px-3 py-2 font-semibold transition-colors ${
+                      active
                         ? "text-status-optimal"
-                        : "text-text-secondary"
-                    }
-                  />
-                  {item.label}
-                </a>
-              </li>
-            ))}
+                        : "text-text-secondary hover:text-text-primary"
+                    }`}
+                  >
+                    <Icon name={item.iconName} size={24} />
+                    {t(item.label)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -104,9 +111,9 @@ export function DashboardHeader() {
 
           <div className="bg-border-divider h-10 w-px" aria-hidden="true" />
 
-          <div className="flex items-center gap-2">
+          <Link to="/user" className="flex items-center gap-2" aria-label={t("User profile")}>
             <span className="mock text-text-dark text-small font-semibold tracking-[0.28px]">
-              Hello, Tatiana
+              {t("Hello, {name}", { name: "Tatiana" })}
             </span>
             <div
               className="flex h-8 w-8 items-center justify-center rounded-full"
@@ -116,7 +123,7 @@ export function DashboardHeader() {
             >
               <Icon name="user" size={24} className="text-text-primary" />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
@@ -127,7 +134,7 @@ export function DashboardHeader() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <NotificationBell />
-          <button type="button" aria-label="Open menu" className="p-1">
+          <button type="button" aria-label={t("Open menu")} className="p-1">
             <Icon name="hamburger" size={24} className="text-text-primary" />
           </button>
         </div>

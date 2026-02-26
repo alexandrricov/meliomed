@@ -1,4 +1,5 @@
 import type { IconName } from "@/components/ui/icon";
+import type { TranslationKey } from "@/i18n/ro";
 
 export type BadgeVariant =
   | "optimal"
@@ -12,8 +13,8 @@ export type TrendDirection = "up" | "down" | "stable";
 export interface HealthMetric {
   emoji: string;
   emojiLabel: string;
-  name: string;
-  status: string;
+  name: TranslationKey;
+  status: TranslationKey;
   current: number;
   max: number;
   gradientFrom: string;
@@ -23,18 +24,18 @@ export interface HealthMetric {
 
 export interface StatItem {
   value: number;
-  title: string;
-  description: string;
+  title: TranslationKey;
+  description: TranslationKey;
   gradientFrom: string;
   gradientTo: string;
 }
 
 export interface Biomarker {
-  name: string;
+  name: TranslationKey;
   value: number;
   unit: string;
   badge: BadgeVariant;
-  badgeLabel: string;
+  badgeLabel: TranslationKey;
   trend: TrendDirection;
   iconName: IconName;
   gradientFrom: string;
@@ -44,17 +45,16 @@ export interface Biomarker {
 export interface Appointment {
   month: string;
   day: string;
-  title: string;
-  description: string;
+  title: TranslationKey;
+  description: TranslationKey | "";
   badge: BadgeVariant;
-  badgeLabel: string;
+  badgeLabel: TranslationKey;
   hasCta: boolean;
-  ctaLabel?: string;
+  ctaLabel?: TranslationKey;
 }
 
 export interface NavItem {
-  label: string;
+  label: TranslationKey;
   iconName: IconName;
-  active: boolean;
   href: string;
 }

@@ -10,7 +10,7 @@ export const melioScore = {
   value: 84,
   maxValue: 100,
   subtitle: "You are in the optimal range. Keep it up.",
-};
+} as const;
 
 export const healthMetrics: HealthMetric[] = [
   {
@@ -140,28 +140,8 @@ export const appointments: Appointment[] = [
 ];
 
 export const navItems: NavItem[] = [
-  {
-    label: "Dashboard",
-    iconName: "nav-dashboard",
-    active: true,
-    href: "/",
-  },
-  {
-    label: "AI Assistant",
-    iconName: "nav-ai",
-    active: false,
-    href: "/ai",
-  },
-  {
-    label: "My Data",
-    iconName: "nav-data",
-    active: false,
-    href: "/data",
-  },
-  {
-    label: "Profile",
-    iconName: "nav-profile",
-    active: false,
-    href: "/profile",
-  },
+  { label: "Dashboard", iconName: "nav-dashboard", href: "/" },
+  { label: "AI Assistant", iconName: "nav-ai", href: "/ai" },
+  { label: "My Data", iconName: "nav-data", href: "/data" },
+  { label: "Profile", iconName: "nav-profile", href: "/user" },
 ];

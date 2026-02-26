@@ -107,6 +107,53 @@
   border-radius: 4px;
 }
 
+.sliding-nav {
+  --nav-padding: 4px;
+  @apply relative flex;
+
+  @media (hover: hover) and (pointer: fine) {
+    &::before {
+      content: "";
+      position-anchor: --li-hover;
+      inset: calc(anchor(start)) calc(anchor(end) + var(--nav-padding))
+        calc(anchor(end)) calc(anchor(start) + var(--nav-padding));
+      @apply pointer-events-none absolute rounded-inner bg-bg-progress-track;
+      transition: 0.15s;
+    }
+  }
+
+  &::after {
+    content: "";
+    position-anchor: --li-active;
+    inset: calc(anchor(start)) calc(anchor(end) + var(--nav-padding))
+      calc(anchor(end)) calc(anchor(start) + var(--nav-padding));
+    @apply pointer-events-none absolute rounded-inner;
+    background: linear-gradient(var(--status-optimal-bg), var(--status-optimal-bg)),
+      var(--bg-card);
+    transition: 0.15s;
+  }
+
+  & li {
+    padding-inline: var(--nav-padding);
+    z-index: 1;
+    anchor-name: var(--anchor-name-hover, --noop-hover),
+      var(--anchor-name-active, --noop-active);
+  }
+
+  & li:hover {
+    --anchor-name-hover: --li-hover;
+  }
+
+  & li:has([aria-current="page"]) {
+    --anchor-name-active: --li-active;
+    --anchor-name-hover: --li-hover;
+  }
+
+  &:has(li:hover) li:has([aria-current="page"]):not(:hover) {
+    anchor-name: var(--anchor-name-active, --noop-active);
+  }
+}
+
 /* ── Light theme (default) ── */
 :root {
   color-scheme: light dark;

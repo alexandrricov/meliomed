@@ -43,6 +43,10 @@
 </clipPath>
 </defs>
   </symbol>
+  <symbol id="icon__arrow-left" viewBox="0 0 24 24" fill="none">
+    <path d="M3.3553 11.9718L21 12" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5.8959 9.48627L3.3828 11.9994L5.8965 14.5131" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
   <symbol id="icon__arrow-right" viewBox="0 0 24 24" fill="none">
     <path d="M20.6447 11.9718L3 12" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18.1041 9.48627L20.6172 11.9994L18.1035 14.5131" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>

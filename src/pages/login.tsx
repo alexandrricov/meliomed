@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useLogin } from "@/hooks/useAuth";
+import { useI18n } from "@/hooks/useI18n";
 
 export function LoginPage() {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const login = useLogin();
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
@@ -50,10 +52,10 @@ export function LoginPage() {
         </div>
 
         <h1 className="text-text-primary text-h2 mb-1 text-center font-bold">
-          Welcome back
+          {t("Welcome back")}
         </h1>
         <p className="text-text-secondary mb-6 text-center font-normal">
-          Sign in to your account
+          {t("Sign in to your account")}
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -62,7 +64,7 @@ export function LoginPage() {
               htmlFor="email"
               className="text-text-primary text-small font-semibold"
             >
-              Email
+              {t("Email")}
             </label>
             <input
               id="email"
@@ -73,7 +75,7 @@ export function LoginPage() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
-              placeholder="you@example.com"
+              placeholder={t("you@example.com")}
               className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal border px-3 py-2.5 transition-colors outline-none"
             />
           </div>
@@ -83,7 +85,7 @@ export function LoginPage() {
               htmlFor="password"
               className="text-text-primary text-small font-semibold"
             >
-              Password
+              {t("Password")}
             </label>
             <div className="relative">
               <input
@@ -95,7 +97,7 @@ export function LoginPage() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-                placeholder="Enter your password"
+                placeholder={t("Enter your password")}
                 className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal w-full border px-3 py-2.5 pr-10 transition-colors outline-none"
               />
               <button
@@ -103,7 +105,9 @@ export function LoginPage() {
                 onClick={() => {
                   setShowPassword((prev) => !prev);
                 }}
-                aria-label={showPassword ? "Hide password" : "Show password"}
+                aria-label={
+                  showPassword ? t("Hide password") : t("Show password")
+                }
                 className="text-text-secondary hover:text-text-primary absolute top-1/2 right-3 -translate-y-1/2"
               >
                 <svg
@@ -139,7 +143,7 @@ export function LoginPage() {
               href="/forgot-password"
               className="text-status-optimal text-small font-semibold hover:underline"
             >
-              Forgot password?
+              {t("Forgot password?")}
             </a>
           </div>
 
@@ -150,7 +154,7 @@ export function LoginPage() {
             >
               {login.error instanceof Error
                 ? login.error.message
-                : "Invalid email or password"}
+                : t("Invalid email or password")}
             </div>
           )}
 
@@ -162,17 +166,17 @@ export function LoginPage() {
               background: "linear-gradient(to right, #8bec90, #17d792)",
             }}
           >
-            {login.isPending ? "Signing in…" : "Sign in"}
+            {login.isPending ? t("Signing in…") : t("Sign in")}
           </button>
         </form>
 
         <p className="text-text-secondary text-small mt-6 text-center">
-          Don&apos;t have an account?{" "}
+          {t("Don't have an account?")}{" "}
           <a
             href="/register"
             className="text-status-optimal font-semibold hover:underline"
           >
-            Sign up
+            {t("Sign up")}
           </a>
         </p>
       </div>

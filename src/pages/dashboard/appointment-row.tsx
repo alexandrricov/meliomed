@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icon";
+import { useI18n } from "@/hooks/useI18n";
 import type { Appointment } from "@/types/dashboard";
 
 interface AppointmentRowProps {
@@ -7,6 +8,8 @@ interface AppointmentRowProps {
 }
 
 export function AppointmentRow({ appointment }: AppointmentRowProps) {
+  const { t } = useI18n();
+
   return (
     <div className="mock rounded-inner bg-bg-card shadow-card flex items-start gap-3 p-4">
       {/* Left group: date box + content */}
@@ -24,33 +27,36 @@ export function AppointmentRow({ appointment }: AppointmentRowProps) {
         {/* Title + description/CTA stacked */}
         <div className="flex min-w-0 flex-col gap-3 pt-0.5">
           <h3 className="text-text-primary text-h3 font-bold">
-            {appointment.title}
+            {t(appointment.title)}
           </h3>
 
           {appointment.description && (
             <p className="text-text-secondary font-normal">
-              {appointment.description}
+              {t(appointment.description)}
             </p>
           )}
 
           {appointment.hasCta && appointment.ctaLabel && (
             <button
               type="button"
-              aria-label={`${appointment.ctaLabel}: ${appointment.title}`}
+              aria-label={t("{label}: {title}", {
+                label: t(appointment.ctaLabel),
+                title: t(appointment.title),
+              })}
               className="rounded-inner text-text-primary shadow-cta flex h-11 w-fit items-center gap-2.5 px-4 font-semibold"
               style={{
                 background: "linear-gradient(to right, #8bec90, #17d792)",
               }}
             >
               <Icon name="calendar" size={20} />
-              {appointment.ctaLabel}
+              {t(appointment.ctaLabel)}
             </button>
           )}
         </div>
       </div>
 
       {/* Badge — right-aligned */}
-      <Badge variant={appointment.badge}>{appointment.badgeLabel}</Badge>
+      <Badge variant={appointment.badge}>{t(appointment.badgeLabel)}</Badge>
     </div>
   );
 }

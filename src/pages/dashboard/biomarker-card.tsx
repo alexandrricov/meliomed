@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { GradientBox } from "@/components/ui/gradient-box";
 import { Icon } from "@/components/ui/icon";
+import { useI18n } from "@/hooks/useI18n";
 import type { Biomarker } from "@/types/dashboard";
 
 interface BiomarkerCardProps {
@@ -23,6 +24,8 @@ function TrendIcon({ trend }: { trend: Biomarker["trend"] }) {
 }
 
 export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
+  const { t } = useI18n();
+
   return (
     <div className="mock rounded-inner bg-bg-card shadow-card flex min-w-62.5 flex-1 items-center gap-3 p-4">
       <GradientBox
@@ -35,9 +38,9 @@ export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <div className="flex items-center gap-2">
           <span className="text-text-primary truncate font-semibold">
-            {biomarker.name}
+            {t(biomarker.name)}
           </span>
-          <Badge variant={biomarker.badge}>{biomarker.badgeLabel}</Badge>
+          <Badge variant={biomarker.badge}>{t(biomarker.badgeLabel)}</Badge>
         </div>
 
         <div className="flex items-baseline gap-2">

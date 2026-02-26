@@ -1,8 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { GuestRoute } from "@/components/auth/guest-route";
 import { ProtectedRoute } from "@/components/auth/protected-route";
+import { AppLayout } from "@/components/layout/app-layout";
+import { AiAssistantPage } from "@/pages/ai";
 import { DashboardPage } from "@/pages/dashboard";
+import { DataPage } from "@/pages/data";
 import { LoginPage } from "@/pages/login";
+import { UserPage } from "@/pages/user";
 
 export function AppRouter() {
   return (
@@ -20,13 +24,17 @@ export function AppRouter() {
 
         {/* Protected routes — require auth */}
         <Route
-          path="/"
           element={
             <ProtectedRoute>
-              <DashboardPage />
+              <AppLayout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/ai" element={<AiAssistantPage />} />
+          <Route path="/data" element={<DataPage />} />
+          <Route path="/user" element={<UserPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,7 @@
 import type { SVGProps } from "react";
 
 export type IconName =
+  | "arrow-left"
   | "arrow-right"
   | "bell"
   | "calendar"

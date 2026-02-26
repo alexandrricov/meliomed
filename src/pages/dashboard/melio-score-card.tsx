@@ -1,8 +1,11 @@
-import { MetricRow } from "@/components/dashboard/metric-row";
-import { ScoreDonutChart } from "@/components/dashboard/score-donut-chart";
 import { healthMetrics, melioScore } from "@/data/mock-dashboard";
+import { useI18n } from "@/hooks/useI18n";
+import { MetricRow } from "./metric-row";
+import { ScoreDonutChart } from "./score-donut-chart";
 
 export function MelioScoreCard() {
+  const { t } = useI18n();
+
   return (
     <section
       aria-labelledby="melio-score-title"
@@ -13,9 +16,11 @@ export function MelioScoreCard() {
           id="melio-score-title"
           className="text-text-primary text-h2 font-bold"
         >
-          Your Melio Score
+          {t("Your Melio Score")}
         </h2>
-        <p className="text-status-optimal font-normal">{melioScore.subtitle}</p>
+        <p className="text-status-optimal font-normal">
+          {t(melioScore.subtitle)}
+        </p>
       </div>
 
       <div className="mt-4">
