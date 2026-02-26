@@ -138,4 +138,13 @@
 <path d="M1 12H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M1 20H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
+
+  <symbol id="icon__sun" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon__moon" viewBox="0 0 24 24" fill="none">
+    <path d="M21.75 15.5a9.75 9.75 0 0 1-13.25-13.25A9.75 9.75 0 1 0 21.75 15.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

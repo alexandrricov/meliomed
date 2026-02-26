@@ -11,13 +11,11 @@ export function MelioScoreCard() {
       <div className="flex flex-col gap-1">
         <h2
           id="melio-score-title"
-          className="text-text-primary text-[22px] leading-7 font-bold"
+          className="text-text-primary text-h2 font-bold"
         >
           Your Melio Score
         </h2>
-        <p className="text-status-optimal text-base font-normal">
-          {melioScore.subtitle}
-        </p>
+        <p className="text-status-optimal font-normal">{melioScore.subtitle}</p>
       </div>
 
       <div className="mt-4">

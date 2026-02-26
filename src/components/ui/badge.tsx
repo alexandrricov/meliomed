@@ -21,7 +21,7 @@ interface BadgeProps {
 export function Badge({ variant, children }: BadgeProps) {
   return (
     <span
-      className={`rounded-inner inline-block border px-3 py-1 text-base font-semibold ${variantStyles[variant]}`}
+      className={`rounded-inner inline-block border px-3 py-1 font-semibold ${variantStyles[variant]}`}
     >
       {children}
     </span>

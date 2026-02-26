@@ -8,13 +8,10 @@ export function RecentInsightsCard() {
       className="rounded-card bg-bg-card shadow-card p-4"
     >
       <div className="flex flex-col gap-1">
-        <h2
-          id="insights-title"
-          className="text-text-primary text-[22px] leading-7 font-bold"
-        >
+        <h2 id="insights-title" className="text-text-primary text-h2 font-bold">
           Recent Insights
         </h2>
-        <p className="text-text-secondary text-base font-normal">
+        <p className="text-text-secondary font-normal">
           Your latest biomarkers
         </p>
       </div>

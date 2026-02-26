@@ -24,7 +24,7 @@ function TrendIcon({ trend }: { trend: Biomarker["trend"] }) {
 
 export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
   return (
-    <div className="rounded-inner bg-bg-card shadow-card flex min-w-62.5 flex-1 items-center gap-3 p-4">
+    <div className="mock rounded-inner bg-bg-card shadow-card flex min-w-62.5 flex-1 items-center gap-3 p-4">
       <GradientBox
         gradientFrom={biomarker.gradientFrom}
         gradientTo={biomarker.gradientTo}
@@ -34,17 +34,17 @@ export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
 
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-text-primary truncate text-base font-semibold">
+          <span className="text-text-primary truncate font-semibold">
             {biomarker.name}
           </span>
           <Badge variant={biomarker.badge}>{biomarker.badgeLabel}</Badge>
         </div>
 
         <div className="flex items-baseline gap-2">
-          <span className="text-text-primary text-[32px] leading-7 font-bold">
+          <span className="text-text-primary text-h1 font-bold">
             {biomarker.value}
           </span>
-          <span className="text-text-secondary text-base font-normal">
+          <span className="text-text-secondary font-normal">
             {biomarker.unit}
           </span>
           <TrendIcon trend={biomarker.trend} />

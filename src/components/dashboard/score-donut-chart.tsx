@@ -35,7 +35,7 @@ export function ScoreDonutChart({
     <div className="flex justify-center">
       <svg
         viewBox="0 0 200 200"
-        className="h-auto w-full max-w-[309px]"
+        className="mock h-auto w-full max-w-77.25"
         role="img"
         aria-label={`Melio Score: ${String(score)} out of ${String(maxScore)}`}
       >
@@ -60,7 +60,7 @@ export function ScoreDonutChart({
           cy={CENTER}
           r={RADIUS}
           fill="none"
-          stroke="#eff3f9"
+          className="stroke-bg-progress-track"
           strokeWidth={STROKE_WIDTH}
           strokeLinecap="round"
           strokeDasharray={`${String(ARC_LENGTH)} ${String(GAP_LENGTH)}`}
@@ -89,7 +89,7 @@ export function ScoreDonutChart({
           cy={CENTER}
           r={INNER_RADIUS}
           fill="none"
-          stroke="#009966"
+          className="stroke-status-optimal"
           strokeWidth={DOT_SIZE}
           strokeDasharray={`${String(DOT_SIZE)} ${String(DOT_GAP)}`}
           strokeLinecap="round"
@@ -100,7 +100,7 @@ export function ScoreDonutChart({
           x={CENTER}
           y={92}
           textAnchor="middle"
-          className="fill-black text-[8px] font-normal"
+          className="fill-text-primary text-[8px] font-normal"
         >
           Current Melio Score
         </text>
@@ -108,7 +108,7 @@ export function ScoreDonutChart({
           x={CENTER}
           y={122}
           textAnchor="middle"
-          className="fill-black text-[29px] font-normal"
+          className="fill-text-primary text-[29px] font-normal"
         >
           {score}
         </text>

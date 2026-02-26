@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://office.melio.med/api/:path*" },
+    {
+      "source": "/api/:path*",
+      "destination": "https://office.melio.med/api/:path*"
+    },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [

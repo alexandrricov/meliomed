@@ -7,7 +7,7 @@ interface MetricRowProps {
 
 export function MetricRow({ metric }: MetricRowProps) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="mock flex items-center gap-3">
       <div
         className="rounded-inner flex h-10 w-10 shrink-0 items-center justify-center text-2xl"
         style={{ backgroundColor: metric.accentBg }}
@@ -16,10 +16,10 @@ export function MetricRow({ metric }: MetricRowProps) {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <span className="text-text-secondary text-sm font-medium">
+        <span className="text-text-secondary text-small font-medium">
           {metric.name}
         </span>
-        <span className="text-text-secondary text-sm font-medium">
+        <span className="text-text-secondary text-small font-medium">
           <span className="text-text-primary font-bold">{metric.status}</span>{" "}
           {String(metric.current)}/{String(metric.max)}
         </span>

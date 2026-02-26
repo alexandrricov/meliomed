@@ -1,5 +1,6 @@
 import { Icon } from "@/components/ui/icon";
 import { navItems } from "@/data/mock-dashboard";
+import { useTheme } from "@/hooks/useTheme";
 
 function Logo({ compact = false }: { compact?: boolean }) {
   const boxSize = compact ? 36 : 40;
@@ -27,6 +28,24 @@ function Logo({ compact = false }: { compact?: boolean }) {
   );
 }
 
+function ThemeToggle() {
+  const { resolved, setTheme } = useTheme();
+  const isDark = resolved === "dark";
+
+  return (
+    <button
+      type="button"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      className="text-text-secondary hover:text-text-primary p-1 transition-colors"
+      onClick={() => {
+        setTheme(isDark ? "light" : "dark");
+      }}
+    >
+      <Icon name={isDark ? "sun" : "moon"} size={24} />
+    </button>
+  );
+}
+
 function NotificationBell() {
   return (
     <button
@@ -35,7 +54,7 @@ function NotificationBell() {
       className="relative p-1"
     >
       <Icon name="bell" size={24} className="text-text-secondary" />
-      <span className="bg-status-optimal absolute -top-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full text-[8px] font-extrabold text-white">
+      <span className="mock bg-status-optimal absolute -top-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full text-[8px] font-extrabold text-white">
         1
       </span>
     </button>
@@ -57,7 +76,7 @@ export function DashboardHeader() {
                   href={item.href}
                   role="menuitem"
                   aria-current={item.active ? "page" : undefined}
-                  className={`rounded-inner flex items-center gap-2 px-3 py-2 text-base font-semibold transition-colors ${
+                  className={`rounded-inner flex items-center gap-2 px-3 py-2 font-semibold transition-colors ${
                     item.active
                       ? "bg-status-optimal-bg text-status-optimal"
                       : "text-text-secondary hover:text-text-primary"
@@ -80,12 +99,13 @@ export function DashboardHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-4">
+          <ThemeToggle />
           <NotificationBell />
 
           <div className="bg-border-divider h-10 w-px" aria-hidden="true" />
 
           <div className="flex items-center gap-2">
-            <span className="text-text-dark text-sm font-semibold tracking-[0.28px]">
+            <span className="mock text-text-dark text-small font-semibold tracking-[0.28px]">
               Hello, Tatiana
             </span>
             <div
@@ -105,6 +125,7 @@ export function DashboardHeader() {
         <Logo compact />
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <NotificationBell />
           <button type="button" aria-label="Open menu" className="p-1">
             <Icon name="hamburger" size={24} className="text-text-primary" />

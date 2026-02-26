@@ -10,13 +10,10 @@ export function PlanAheadCard() {
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="flex flex-col gap-1">
-          <h2
-            id="plan-title"
-            className="text-text-primary text-[22px] leading-7 font-bold"
-          >
+          <h2 id="plan-title" className="text-text-primary text-h2 font-bold">
             The Plan Ahead
           </h2>
-          <p className="text-text-secondary text-base font-normal">
+          <p className="text-text-secondary font-normal">
             Upcoming appointments
           </p>
         </div>
@@ -27,7 +24,7 @@ export function PlanAheadCard() {
             type="button"
             role="tab"
             aria-selected="true"
-            className="rounded-inner border-border-divider bg-status-optimal-bg text-status-optimal flex flex-1 items-center justify-center gap-2 border px-3 py-2 text-base font-semibold lg:flex-none"
+            className="rounded-inner border-border-divider bg-status-optimal-bg text-status-optimal flex flex-1 items-center justify-center gap-2 border px-3 py-2 font-semibold lg:flex-none"
           >
             <Icon name="tab-list" size={24} />
             List
@@ -36,7 +33,7 @@ export function PlanAheadCard() {
             type="button"
             role="tab"
             aria-selected="false"
-            className="rounded-inner text-text-secondary flex flex-1 items-center justify-center gap-2 px-3 py-2 text-base font-semibold lg:flex-none"
+            className="rounded-inner text-text-secondary flex flex-1 items-center justify-center gap-2 px-3 py-2 font-semibold lg:flex-none"
           >
             <Icon name="tab-calendar" size={24} />
             Calendar

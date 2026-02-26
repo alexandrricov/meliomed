@@ -9,7 +9,7 @@ export function DashboardPage() {
     <div className="bg-bg-page relative min-h-screen">
       {/* Background gradient overlay */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-40"
+        className="pointer-events-none fixed inset-0 opacity-40 dark:opacity-15"
         aria-hidden="true"
         style={{
           background:

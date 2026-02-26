@@ -22,10 +22,10 @@ export function LoginPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center px-4">
+    <div className="bg-bg-page relative flex min-h-screen items-center justify-center px-4">
       {/* Background gradient */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-30"
+        className="pointer-events-none fixed inset-0 opacity-30 dark:opacity-10"
         aria-hidden="true"
         style={{
           background:
@@ -49,10 +49,10 @@ export function LoginPage() {
           </span>
         </div>
 
-        <h1 className="text-text-primary mb-1 text-center text-[22px] leading-7 font-bold">
+        <h1 className="text-text-primary text-h2 mb-1 text-center font-bold">
           Welcome back
         </h1>
-        <p className="text-text-secondary mb-6 text-center text-base font-normal">
+        <p className="text-text-secondary mb-6 text-center font-normal">
           Sign in to your account
         </p>
 
@@ -60,7 +60,7 @@ export function LoginPage() {
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="email"
-              className="text-text-primary text-sm font-semibold"
+              className="text-text-primary text-small font-semibold"
             >
               Email
             </label>
@@ -74,14 +74,14 @@ export function LoginPage() {
                 setEmail(e.target.value);
               }}
               placeholder="you@example.com"
-              className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal border px-3 py-2.5 text-base transition-colors outline-none"
+              className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal border px-3 py-2.5 transition-colors outline-none"
             />
           </div>
 
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="password"
-              className="text-text-primary text-sm font-semibold"
+              className="text-text-primary text-small font-semibold"
             >
               Password
             </label>
@@ -96,7 +96,7 @@ export function LoginPage() {
                   setPassword(e.target.value);
                 }}
                 placeholder="Enter your password"
-                className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal w-full border px-3 py-2.5 pr-10 text-base transition-colors outline-none"
+                className="border-border-divider text-text-primary placeholder:text-text-secondary/50 rounded-inner focus:border-status-optimal w-full border px-3 py-2.5 pr-10 transition-colors outline-none"
               />
               <button
                 type="button"
@@ -137,7 +137,7 @@ export function LoginPage() {
           <div className="flex justify-end">
             <a
               href="/forgot-password"
-              className="text-status-optimal text-sm font-semibold hover:underline"
+              className="text-status-optimal text-small font-semibold hover:underline"
             >
               Forgot password?
             </a>
@@ -146,7 +146,7 @@ export function LoginPage() {
           {login.isError && (
             <div
               role="alert"
-              className="rounded-inner bg-status-elevated/10 border-status-elevated/30 border px-3 py-2 text-sm text-red-600"
+              className="rounded-inner bg-status-elevated/10 border-status-elevated/30 text-status-danger text-small border px-3 py-2"
             >
               {login.error instanceof Error
                 ? login.error.message
@@ -157,7 +157,7 @@ export function LoginPage() {
           <button
             type="submit"
             disabled={login.isPending}
-            className="rounded-inner shadow-cta py-3 text-base font-bold text-white transition-opacity disabled:opacity-60"
+            className="rounded-inner shadow-cta py-3 font-bold text-white transition-opacity disabled:opacity-60"
             style={{
               background: "linear-gradient(to right, #8bec90, #17d792)",
             }}
@@ -166,7 +166,7 @@ export function LoginPage() {
           </button>
         </form>
 
-        <p className="text-text-secondary mt-6 text-center text-sm">
+        <p className="text-text-secondary text-small mt-6 text-center">
           Don&apos;t have an account?{" "}
           <a
             href="/register"
