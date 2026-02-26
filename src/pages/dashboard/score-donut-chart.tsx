@@ -47,10 +47,10 @@ export function ScoreDonutChart({
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#3b82f6" />
-            <stop offset="35%" stopColor="#08b6d4" />
-            <stop offset="70%" stopColor="#25da92" />
-            <stop offset="100%" stopColor="#0cb7b6" />
+            <stop offset="0%" stopColor="var(--chart-gradient-1)" />
+            <stop offset="35%" stopColor="var(--chart-gradient-2)" />
+            <stop offset="70%" stopColor="var(--chart-gradient-3)" />
+            <stop offset="100%" stopColor="var(--chart-gradient-4)" />
           </linearGradient>
         </defs>
 
@@ -79,7 +79,7 @@ export function ScoreDonutChart({
           strokeDasharray={`${String(scoreArcLength)} ${String(FULL_CIRCUMFERENCE - scoreArcLength)}`}
           transform={`rotate(${String(ROTATION)} ${String(CENTER)} ${String(CENTER)})`}
           style={{
-            filter: "drop-shadow(0 5px 15px rgba(129, 212, 254, 0.2))",
+            filter: "var(--chart-drop-shadow)",
           }}
         />
 

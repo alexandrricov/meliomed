@@ -15,7 +15,7 @@ export function GradientBox({
 }: GradientBoxProps) {
   return (
     <div
-      className={`rounded-inner flex shrink-0 items-center justify-center ${className}`}
+      className={`rounded-inner flex shrink-0 items-center justify-center dark:brightness-90 ${className}`}
       style={{
         width: size,
         height: size,

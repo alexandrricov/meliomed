@@ -15,7 +15,7 @@ function Logo({ compact = false }: { compact?: boolean }) {
         style={{
           width: boxSize,
           height: boxSize,
-          background: "linear-gradient(to right, #8bec90, #17d792)",
+          background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
         }}
       >
         <span className={mSize}>M</span>
@@ -97,7 +97,7 @@ export function DashboardHeader() {
             <div
               className="flex h-8 w-8 items-center justify-center rounded-full"
               style={{
-                background: "linear-gradient(to right, #8bec90, #17d792)",
+                background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
               }}
             >
               <Icon name="user" size={24} className="text-text-primary" />

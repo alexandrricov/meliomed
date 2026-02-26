@@ -43,9 +43,9 @@ export function AppointmentRow({ appointment }: AppointmentRowProps) {
                 label: t(appointment.ctaLabel),
                 title: t(appointment.title),
               })}
-              className="rounded-inner text-text-primary shadow-cta flex h-11 w-fit items-center gap-2.5 px-4 font-semibold"
+              className="rounded-inner text-text-primary shadow-cta flex h-11 w-fit items-center gap-2.5 px-4 font-semibold dark:text-emerald-950"
               style={{
-                background: "linear-gradient(to right, #8bec90, #17d792)",
+                background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
               }}
             >
               <Icon name="calendar" size={20} />

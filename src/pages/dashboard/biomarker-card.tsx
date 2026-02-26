@@ -27,7 +27,7 @@ export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
   const { t } = useI18n();
 
   return (
-    <div className="mock rounded-inner bg-bg-card shadow-card flex min-w-62.5 flex-1 items-center gap-3 p-4">
+    <div className="mock rounded-inner bg-bg-card shadow-card flex items-center gap-3 p-4">
       <GradientBox
         gradientFrom={biomarker.gradientFrom}
         gradientTo={biomarker.gradientTo}
@@ -40,7 +40,9 @@ export function BiomarkerCard({ biomarker }: BiomarkerCardProps) {
           <span className="text-text-primary truncate font-semibold">
             {t(biomarker.name)}
           </span>
-          <Badge variant={biomarker.badge}>{t(biomarker.badgeLabel)}</Badge>
+          <Badge variant={biomarker.badge} className="ml-auto shrink-0">
+            {t(biomarker.badgeLabel)}
+          </Badge>
         </div>
 
         <div className="flex items-baseline gap-2">

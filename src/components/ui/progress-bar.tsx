@@ -25,7 +25,7 @@ export function ProgressBar({
       className="rounded-inner bg-bg-progress-track h-2 w-[104px]"
     >
       <div
-        className="rounded-inner h-full"
+        className="rounded-inner h-full dark:brightness-90"
         style={{
           width: `${String(percent)}%`,
           background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,

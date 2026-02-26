@@ -27,11 +27,11 @@ export function LoginPage() {
     <div className="bg-bg-page relative flex min-h-screen items-center justify-center px-4">
       {/* Background gradient */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-30 dark:opacity-10"
+        className="pointer-events-none fixed inset-0"
         aria-hidden="true"
         style={{
-          background:
-            "linear-gradient(135deg, #ffbb0d 0%, #ffcf32 40%, #90d178 100%)",
+          background: "var(--gradient-overlay)",
+          opacity: "var(--gradient-overlay-opacity)",
         }}
       />
 
@@ -41,7 +41,7 @@ export function LoginPage() {
           <div
             className="rounded-inner flex h-10 w-10 items-center justify-center font-extrabold text-white"
             style={{
-              background: "linear-gradient(to right, #8bec90, #17d792)",
+              background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
             }}
           >
             <span className="text-[28px]">M</span>
@@ -161,9 +161,9 @@ export function LoginPage() {
           <button
             type="submit"
             disabled={login.isPending}
-            className="rounded-inner shadow-cta py-3 font-bold text-white transition-opacity disabled:opacity-60"
+            className="rounded-inner shadow-cta py-3 font-bold text-white transition-opacity disabled:opacity-60 dark:text-emerald-950"
             style={{
-              background: "linear-gradient(to right, #8bec90, #17d792)",
+              background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
             }}
           >
             {login.isPending ? t("Signing in…") : t("Sign in")}

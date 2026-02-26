@@ -9,11 +9,11 @@ export function AppLayout() {
     <div className="bg-bg-page relative min-h-screen">
       {/* Background gradient overlay */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-40 dark:opacity-15"
+        className="pointer-events-none fixed inset-0"
         aria-hidden="true"
         style={{
-          background:
-            "linear-gradient(to bottom right, #ffbb0d, #ffcf32, #90d178)",
+          background: "var(--gradient-overlay)",
+          opacity: "var(--gradient-overlay-opacity)",
         }}
       />
 

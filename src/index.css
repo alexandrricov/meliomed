@@ -20,6 +20,7 @@
   /* Status */
   --color-status-optimal: var(--status-optimal);
   --color-status-optimal-bg: var(--status-optimal-bg);
+  --color-status-optimal-border: var(--status-optimal-border);
   --color-status-elevated: var(--status-elevated);
   --color-status-elevated-bg: var(--status-elevated-bg);
   --color-status-elevated-border: var(--status-elevated-border);
@@ -195,22 +196,36 @@
   --shadow-card-value: 0 4px 16px rgba(0, 67, 195, 0.16);
   --shadow-chart-value: 0 5px 15px rgba(129, 212, 254, 0.2);
   --shadow-cta-value: 0 4px 16px rgba(136, 235, 144, 0.4);
+
+  --status-optimal-border: #009966a0;
+
+  --gradient-brand-from: #8bec90;
+  --gradient-brand-to: #17d792;
+  --gradient-overlay: linear-gradient(to bottom right, #ffbb0d, #ffcf32, #90d178);
+  --gradient-overlay-opacity: 0.40;
+
+  --chart-gradient-1: #3b82f6;
+  --chart-gradient-2: #08b6d4;
+  --chart-gradient-3: #25da92;
+  --chart-gradient-4: #0cb7b6;
+  --chart-drop-shadow: drop-shadow(0 5px 15px rgba(129, 212, 254, 0.2));
 }
 
 /* ── Dark theme ── */
 .dark {
-  --bg-page: #0c0f16;
-  --bg-card: #151921;
-  --bg-header: #151921cc;
-  --bg-progress-track: #1e2330;
+  --bg-page: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-header: #1a1d27e6;
+  --bg-progress-track: #242837;
 
   --text-primary: #e4e8f0;
   --text-secondary: #8892a4;
   --text-dark: #eef0f5;
-  --text-date-label: #3a4254;
+  --text-date-label: #6b7590;
 
   --status-optimal: #00b377;
   --status-optimal-bg: #00b37720;
+  --status-optimal-border: #00b3774d;
   --status-elevated: #ff7733;
   --status-elevated-bg: #ff773318;
   --status-elevated-border: #ff77334d;
@@ -227,9 +242,21 @@
   --accent-purple-light: #201435;
 
   --border-divider: #242a38;
-  --date-box-bg: #0c0f16;
+  --date-box-bg: #242837;
 
-  --shadow-card-value: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-chart-value: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --shadow-cta-value: 0 4px 16px rgba(136, 235, 144, 0.2);
+  --shadow-card-value: 0 1px 3px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-chart-value: 0 0 20px rgba(59, 130, 246, 0.08);
+  --shadow-cta-value: 0 4px 16px rgba(0, 179, 119, 0.15);
+
+  --gradient-brand-from: #34d399;
+  --gradient-brand-to: #10b981;
+  --gradient-overlay: linear-gradient(to bottom right, #1a2744, #0f2e22);
+  --gradient-overlay-opacity: 0.30;
+
+  --chart-gradient-1: #2563eb;
+  --chart-gradient-2: #0891b2;
+  --chart-gradient-3: #10b981;
+  --chart-gradient-4: #0d9488;
+  --chart-drop-shadow: drop-shadow(0 5px 15px rgba(37, 99, 235, 0.12));
 }

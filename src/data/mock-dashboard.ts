@@ -22,7 +22,7 @@ export const healthMetrics: HealthMetric[] = [
     max: 10,
     gradientFrom: "#1bcf88",
     gradientTo: "#01a087",
-    accentBg: "#dbeafe",
+    accentBg: "var(--accent-blue-light)",
   },
   {
     emoji: "🏃",
@@ -33,7 +33,7 @@ export const healthMetrics: HealthMetric[] = [
     max: 10,
     gradientFrom: "#f89f3f",
     gradientTo: "#ff6700",
-    accentBg: "#d0fae5",
+    accentBg: "var(--accent-green-light)",
   },
   {
     emoji: "📋",
@@ -44,7 +44,7 @@ export const healthMetrics: HealthMetric[] = [
     max: 10,
     gradientFrom: "#13aed9",
     gradientTo: "#3886f3",
-    accentBg: "#f3e8ff",
+    accentBg: "var(--accent-purple-light)",
   },
 ];
 

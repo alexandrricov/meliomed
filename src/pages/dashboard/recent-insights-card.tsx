@@ -8,7 +8,7 @@ export function RecentInsightsCard() {
   return (
     <section
       aria-labelledby="insights-title"
-      className="rounded-card bg-bg-card shadow-card p-4"
+      className="@container rounded-card bg-bg-card shadow-card p-4"
     >
       <div className="flex flex-col gap-1">
         <h2 id="insights-title" className="text-text-primary text-h2 font-bold">
@@ -19,7 +19,7 @@ export function RecentInsightsCard() {
         </p>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-4">
+      <div className="mt-4 grid grid-cols-1 gap-4 @xl:grid-cols-2">
         {biomarkers.map((biomarker) => (
           <BiomarkerCard key={biomarker.name} biomarker={biomarker} />
         ))}
