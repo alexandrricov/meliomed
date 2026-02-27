@@ -15,6 +15,43 @@ const ro = {
   "Don't have an account?": "Nu aveți un cont?",
   "Sign up": "Înregistrare",
 
+  // Register
+  "Create your account": "Creați-vă contul",
+  "Start your health journey with Melio":
+    "Începeți călătoria dvs. de sănătate cu Melio",
+  "First name": "Prenume",
+  "Last name": "Nume",
+  "Create a password": "Creați o parolă",
+  "Confirm password": "Confirmați parola",
+  "Repeat your password": "Repetați parola",
+  "Create account": "Creează cont",
+  "Creating account…": "Se creează contul…",
+  "Already have an account?": "Aveți deja un cont?",
+  "Something went wrong. Please try again.":
+    "Ceva nu a funcționat. Vă rugăm încercați din nou.",
+
+  // Forgot password
+  "Reset your password": "Resetați parola",
+  "Enter your email and we'll send you a reset link":
+    "Introduceți emailul și vă vom trimite un link de resetare",
+  "Send reset link": "Trimite link de resetare",
+  "Sending…": "Se trimite…",
+  "Check your email": "Verificați emailul",
+  "We sent a password reset link to {email}":
+    "Am trimis un link de resetare a parolei la {email}",
+  "Back to sign in": "Înapoi la conectare",
+
+  // Reset password
+  "Set new password": "Setați parola nouă",
+  "Choose a new password for your account":
+    "Alegeți o parolă nouă pentru contul dvs.",
+  "New password": "Parolă nouă",
+  "Reset password": "Resetează parola",
+  "Resetting…": "Se resetează…",
+  "Password changed": "Parola a fost schimbată",
+  "Your password has been reset successfully.":
+    "Parola dvs. a fost resetată cu succes.",
+
   // Navigation
   "Dashboard": "Tablou de bord",
   "AI Assistant": "Asistent AI",

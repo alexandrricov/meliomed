@@ -111,10 +111,3 @@ export interface CalendarUpcomingItem extends CalendarEventApi {
   days_until: number;
   is_urgent: boolean;
 }
-
-export interface UserPreferences {
-  dark_mode: boolean;
-  language: "ro" | "en";
-  notifications: boolean;
-  preferred_date_filter: "daily" | "weekly" | "monthly";
-}

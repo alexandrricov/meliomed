@@ -6,10 +6,14 @@ import type { TranslationKey } from "@/i18n/ro";
 
 const STORAGE_KEY = "lang";
 
+function detectBrowserLang(): Lang {
+  return navigator.language.startsWith("en") ? "en" : "ro";
+}
+
 function getStoredLang(): Lang {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "ro" || stored === "en") return stored;
-  return "ro";
+  return detectBrowserLang();
 }
 
 // Sync lang attribute before first render (avoids flash)

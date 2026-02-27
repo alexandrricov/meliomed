@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { Icon } from "@/components/ui/icon";
 import type { Lang } from "@/contexts/i18n-context";
 import type { Theme } from "@/contexts/theme-context";
 import { useLogout } from "@/hooks/useAuth";
 import { useI18n } from "@/hooks/useI18n";
-import { useGetPreferences, useUpdatePreference } from "@/hooks/usePreferences";
 import { useTheme } from "@/hooks/useTheme";
 
 const languages: { code: Lang; label: string }[] = [
@@ -56,8 +54,8 @@ function ThemeToggle({ onChangeTheme }: { onChangeTheme: (t: Theme) => void }) {
   );
 }
 
-function LanguageSwitcher({ onChangeLang }: { onChangeLang: (l: Lang) => void }) {
-  const { lang, t } = useI18n();
+function LanguageSwitcher() {
+  const { lang, setLang, t } = useI18n();
 
   return (
     <div className="bg-bg-card shadow-card rounded-outer flex w-full items-center justify-between px-4 py-3">
@@ -69,18 +67,19 @@ function LanguageSwitcher({ onChangeLang }: { onChangeLang: (l: Lang) => void })
           {t("Language")}
         </span>
       </div>
-      <div className="flex gap-1">
+      <div className="flex gap-1" role="radiogroup" aria-label={t("Language")}>
         {languages.map((l) => (
           <button
             key={l.code}
             type="button"
-            aria-pressed={lang === l.code}
+            role="radio"
+            aria-checked={lang === l.code}
             className={`rounded-inner px-3 py-1 text-small font-semibold transition-colors ${
               lang === l.code
                 ? "bg-status-optimal-bg text-status-optimal"
                 : "text-text-secondary hover:text-text-primary"
             }`}
-            onClick={() => { onChangeLang(l.code); }}
+            onClick={() => { setLang(l.code); }}
           >
             {l.label}
           </button>
@@ -91,28 +90,9 @@ function LanguageSwitcher({ onChangeLang }: { onChangeLang: (l: Lang) => void })
 }
 
 export function UserPage() {
-  const { t, setLang } = useI18n();
+  const { t } = useI18n();
   const { setTheme } = useTheme();
-  const { data: prefs } = useGetPreferences();
-  const { mutate: updatePref } = useUpdatePreference();
   const logout = useLogout();
-
-  // Sync server preferences to local context on load
-  useEffect(() => {
-    if (!prefs) return;
-    setTheme(prefs.dark_mode ? "dark" : "light");
-    setLang(prefs.language);
-  }, [prefs, setTheme, setLang]);
-
-  function handleThemeChange(theme: Theme) {
-    setTheme(theme);
-    updatePref({ key: "dark_mode", value: theme === "dark" });
-  }
-
-  function handleLangChange(newLang: Lang) {
-    setLang(newLang);
-    updatePref({ key: "language", value: newLang });
-  }
 
   return (
     <div className="flex flex-col gap-6 pt-6">
@@ -120,14 +100,14 @@ export function UserPage() {
         <h2 className="text-text-secondary text-small mb-3 font-semibold tracking-wider uppercase">
           {t("Appearance")}
         </h2>
-        <ThemeToggle onChangeTheme={handleThemeChange} />
+        <ThemeToggle onChangeTheme={setTheme} />
       </section>
 
       <section aria-label={t("Language")}>
         <h2 className="text-text-secondary text-small mb-3 font-semibold tracking-wider uppercase">
           {t("Language")}
         </h2>
-        <LanguageSwitcher onChangeLang={handleLangChange} />
+        <LanguageSwitcher />
       </section>
 
       <section aria-label={t("Account")}>

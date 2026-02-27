@@ -76,3 +76,54 @@ export function useLogout() {
 export function useIsAuthenticated(): boolean {
   return Boolean(getAccessToken());
 }
+
+interface RegisterData {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+}
+
+export function useRegister() {
+  return useMutation({
+    mutationFn: (data: RegisterData) =>
+      api<LoginResponse>("auth/register", {
+        method: "POST",
+        data,
+        useAuth: false,
+      }),
+    onSuccess: (result) => {
+      setAccessToken(result.data.token);
+    },
+  });
+}
+
+export function useForgotPassword() {
+  return useMutation({
+    mutationFn: (data: { email: string }) =>
+      api("auth/forgot-password", {
+        method: "POST",
+        data,
+        useAuth: false,
+      }),
+  });
+}
+
+interface ResetPasswordData {
+  email: string;
+  token: string;
+  password: string;
+  password_confirmation: string;
+}
+
+export function useResetPassword() {
+  return useMutation({
+    mutationFn: (data: ResetPasswordData) =>
+      api("auth/reset-password", {
+        method: "POST",
+        data,
+        useAuth: false,
+      }),
+  });
+}
