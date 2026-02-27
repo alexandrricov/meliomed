@@ -61,7 +61,12 @@ export function useLogout() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  return () => {
+  return async () => {
+    try {
+      await api("auth/logout", { method: "POST" });
+    } catch {
+      // Graceful degradation: proceed with local cleanup even if API fails
+    }
     removeAccessToken();
     queryClient.clear();
     void navigate("/login");

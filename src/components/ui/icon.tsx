@@ -11,6 +11,7 @@ export type IconName =
   | "drop"
   | "hamburger"
   | "heart"
+  | "log-out"
   | "moon"
   | "nav-ai"
   | "nav-dashboard"

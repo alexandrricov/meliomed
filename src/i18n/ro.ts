@@ -29,6 +29,7 @@ const ro = {
   "Hello, {name}": "Bună, {name}",
   "User profile": "Profil utilizator",
   "Open menu": "Deschide meniul",
+  "Close menu": "Închide meniul",
 
   // App layout
   "Skip to main content": "Salt la conținutul principal",
@@ -256,6 +257,10 @@ const ro = {
   "Dark theme": "Temă întunecată",
   "Light theme": "Temă deschisă",
   "Language": "Limbă",
+
+  // Account
+  "Account": "Cont",
+  "Log out": "Deconectare",
 } as const satisfies Record<string, string>;
 
 export type TranslationKey = keyof typeof ro;

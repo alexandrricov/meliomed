@@ -94,6 +94,8 @@ export async function api<T = unknown>(
 
     if (response.status === 401) {
       removeAccessToken();
+      window.location.href = "/login";
+      throw err;
     }
 
     throw err;

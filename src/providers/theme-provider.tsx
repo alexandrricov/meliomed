@@ -39,7 +39,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const resolved = theme === "system" ? systemPref : theme;
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", resolved === "dark");
+    const isDark = resolved === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+
+    // Sync browser chrome color (Safari address bar on iOS)
+    const metas = document.querySelectorAll('meta[name="theme-color"]');
+    const color = isDark ? "#1a1d27" : "#ffffff";
+    metas.forEach((meta) => meta.setAttribute("content", color));
   }, [resolved]);
 
   const setTheme = useCallback((next: Theme) => {

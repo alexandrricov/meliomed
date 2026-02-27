@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Icon } from "@/components/ui/icon";
 import type { Lang } from "@/contexts/i18n-context";
 import type { Theme } from "@/contexts/theme-context";
+import { useLogout } from "@/hooks/useAuth";
 import { useI18n } from "@/hooks/useI18n";
 import { useGetPreferences, useUpdatePreference } from "@/hooks/usePreferences";
 import { useTheme } from "@/hooks/useTheme";
@@ -94,6 +95,7 @@ export function UserPage() {
   const { setTheme } = useTheme();
   const { data: prefs } = useGetPreferences();
   const { mutate: updatePref } = useUpdatePreference();
+  const logout = useLogout();
 
   // Sync server preferences to local context on load
   useEffect(() => {
@@ -126,6 +128,20 @@ export function UserPage() {
           {t("Language")}
         </h2>
         <LanguageSwitcher onChangeLang={handleLangChange} />
+      </section>
+
+      <section aria-label={t("Account")}>
+        <h2 className="text-text-secondary text-small mb-3 font-semibold tracking-wider uppercase">
+          {t("Account")}
+        </h2>
+        <button
+          type="button"
+          onClick={logout}
+          className="bg-bg-card shadow-card rounded-outer flex w-full items-center gap-3 px-4 py-3 text-red-500 font-semibold transition-colors hover:bg-red-50 dark:hover:bg-red-950/20"
+        >
+          <Icon name="log-out" size={24} />
+          {t("Log out")}
+        </button>
       </section>
     </div>
   );
