@@ -16,13 +16,15 @@ export type IconName =
   | "nav-dashboard"
   | "nav-data"
   | "nav-profile"
+  | "plus-circle"
   | "pulse"
   | "sun"
   | "tab-calendar"
   | "tab-list"
   | "trend-down"
   | "trend-up"
-  | "user";
+  | "user"
+  | "x";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;

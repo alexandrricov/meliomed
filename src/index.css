@@ -109,6 +109,28 @@
   border-radius: 4px;
 }
 
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@utility animate-fade-slide-in {
+  animation: fadeSlideIn 0.25s ease-out both;
+}
+
+@utility bg-gradient-brand {
+  background: linear-gradient(
+    to right,
+    var(--gradient-brand-from),
+    var(--gradient-brand-to)
+  );
+}
+
 .sliding-nav {
   --nav-padding: 4px;
   @apply relative flex;

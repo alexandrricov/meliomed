@@ -35,7 +35,7 @@ export function ScoreDonutChart({
     <div className="flex justify-center">
       <svg
         viewBox="0 0 200 200"
-        className="mock h-auto w-full max-w-77.25"
+        className="h-auto w-full max-w-77.25"
         role="img"
         aria-label={`Melio Score: ${String(score)} out of ${String(maxScore)}`}
       >
@@ -67,21 +67,23 @@ export function ScoreDonutChart({
           transform={`rotate(${String(ROTATION)} ${String(CENTER)} ${String(CENTER)})`}
         />
 
-        {/* Score arc */}
-        <circle
-          cx={CENTER}
-          cy={CENTER}
-          r={RADIUS}
-          fill="none"
-          stroke="url(#score-gradient)"
-          strokeWidth={STROKE_WIDTH}
-          strokeLinecap="round"
-          strokeDasharray={`${String(scoreArcLength)} ${String(FULL_CIRCUMFERENCE - scoreArcLength)}`}
-          transform={`rotate(${String(ROTATION)} ${String(CENTER)} ${String(CENTER)})`}
-          style={{
-            filter: "var(--chart-drop-shadow)",
-          }}
-        />
+        {/* Score arc — hidden when score is 0 */}
+        {score > 0 && (
+          <circle
+            cx={CENTER}
+            cy={CENTER}
+            r={RADIUS}
+            fill="none"
+            stroke="url(#score-gradient)"
+            strokeWidth={STROKE_WIDTH}
+            strokeLinecap="round"
+            strokeDasharray={`${String(scoreArcLength)} ${String(FULL_CIRCUMFERENCE - scoreArcLength)}`}
+            transform={`rotate(${String(ROTATION)} ${String(CENTER)} ${String(CENTER)})`}
+            style={{
+              filter: "var(--chart-drop-shadow)",
+            }}
+          />
+        )}
 
         {/* Inner dotted boundary ring */}
         <circle

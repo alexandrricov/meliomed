@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { Icon } from "@/components/ui/icon";
 import type { Lang } from "@/contexts/i18n-context";
+import type { Theme } from "@/contexts/theme-context";
 import { useI18n } from "@/hooks/useI18n";
+import { useGetPreferences, useUpdatePreference } from "@/hooks/usePreferences";
 import { useTheme } from "@/hooks/useTheme";
 
 const languages: { code: Lang; label: string }[] = [
@@ -8,41 +11,52 @@ const languages: { code: Lang; label: string }[] = [
   { code: "en", label: "English" },
 ];
 
-function ThemeToggle() {
-  const { resolved, setTheme } = useTheme();
+const themeOptions = [
+  { value: "system", label: "Auto" },
+  { value: "light", label: "Light" },
+  { value: "dark", label: "Dark" },
+] as const satisfies readonly { value: Theme; label: string }[];
+
+function ThemeToggle({ onChangeTheme }: { onChangeTheme: (t: Theme) => void }) {
+  const { theme, resolved } = useTheme();
   const { t } = useI18n();
-  const isDark = resolved === "dark";
 
   return (
-    <button
-      type="button"
-      aria-label={isDark ? t("Switch to light theme") : t("Switch to dark theme")}
-      className="bg-bg-card shadow-card rounded-outer flex w-full items-center justify-between px-4 py-3"
-      onClick={() => {
-        setTheme(isDark ? "light" : "dark");
-      }}
-    >
+    <div className="bg-bg-card shadow-card rounded-outer flex w-full items-center justify-between px-4 py-3">
       <div className="flex items-center gap-3">
         <Icon
-          name={isDark ? "moon" : "sun"}
+          name={resolved === "dark" ? "moon" : "sun"}
           size={24}
           className="text-text-secondary"
         />
         <span className="text-text-primary font-semibold">
-          {isDark ? t("Dark theme") : t("Light theme")}
+          {t("Appearance")}
         </span>
       </div>
-      <Icon
-        name={isDark ? "sun" : "moon"}
-        size={20}
-        className="text-text-tertiary"
-      />
-    </button>
+      <div className="flex gap-1" role="radiogroup" aria-label={t("Appearance")}>
+        {themeOptions.map((opt) => (
+          <button
+            key={opt.value}
+            type="button"
+            role="radio"
+            aria-checked={theme === opt.value}
+            className={`rounded-inner px-3 py-1 text-small font-semibold transition-colors ${
+              theme === opt.value
+                ? "bg-status-optimal-bg text-status-optimal"
+                : "text-text-secondary hover:text-text-primary"
+            }`}
+            onClick={() => { onChangeTheme(opt.value); }}
+          >
+            {t(opt.label)}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }
 
-function LanguageSwitcher() {
-  const { lang, setLang, t } = useI18n();
+function LanguageSwitcher({ onChangeLang }: { onChangeLang: (l: Lang) => void }) {
+  const { lang, t } = useI18n();
 
   return (
     <div className="bg-bg-card shadow-card rounded-outer flex w-full items-center justify-between px-4 py-3">
@@ -65,9 +79,7 @@ function LanguageSwitcher() {
                 ? "bg-status-optimal-bg text-status-optimal"
                 : "text-text-secondary hover:text-text-primary"
             }`}
-            onClick={() => {
-              setLang(l.code);
-            }}
+            onClick={() => { onChangeLang(l.code); }}
           >
             {l.label}
           </button>
@@ -78,7 +90,27 @@ function LanguageSwitcher() {
 }
 
 export function UserPage() {
-  const { t } = useI18n();
+  const { t, setLang } = useI18n();
+  const { setTheme } = useTheme();
+  const { data: prefs } = useGetPreferences();
+  const { mutate: updatePref } = useUpdatePreference();
+
+  // Sync server preferences to local context on load
+  useEffect(() => {
+    if (!prefs) return;
+    setTheme(prefs.dark_mode ? "dark" : "light");
+    setLang(prefs.language);
+  }, [prefs, setTheme, setLang]);
+
+  function handleThemeChange(theme: Theme) {
+    setTheme(theme);
+    updatePref({ key: "dark_mode", value: theme === "dark" });
+  }
+
+  function handleLangChange(newLang: Lang) {
+    setLang(newLang);
+    updatePref({ key: "language", value: newLang });
+  }
 
   return (
     <div className="flex flex-col gap-6 pt-6">
@@ -86,14 +118,14 @@ export function UserPage() {
         <h2 className="text-text-secondary text-small mb-3 font-semibold tracking-wider uppercase">
           {t("Appearance")}
         </h2>
-        <ThemeToggle />
+        <ThemeToggle onChangeTheme={handleThemeChange} />
       </section>
 
       <section aria-label={t("Language")}>
         <h2 className="text-text-secondary text-small mb-3 font-semibold tracking-wider uppercase">
           {t("Language")}
         </h2>
-        <LanguageSwitcher />
+        <LanguageSwitcher onChangeLang={handleLangChange} />
       </section>
     </div>
   );

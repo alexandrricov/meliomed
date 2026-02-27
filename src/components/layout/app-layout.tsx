@@ -29,7 +29,7 @@ export function AppLayout() {
 
       <main
         id="main-content"
-        className="relative z-10 mx-auto max-w-360 px-4 pb-16 lg:px-30"
+        className="relative z-10 mx-auto max-w-360 px-4 pb-16 lg:px-6"
       >
         <Outlet />
       </main>

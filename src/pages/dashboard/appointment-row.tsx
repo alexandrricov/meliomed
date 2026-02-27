@@ -1,5 +1,5 @@
+import { Button } from "@/components/ui/action";
 import { Badge } from "@/components/ui/badge";
-import { Icon } from "@/components/ui/icon";
 import { useI18n } from "@/hooks/useI18n";
 import type { Appointment } from "@/types/dashboard";
 
@@ -11,7 +11,7 @@ export function AppointmentRow({ appointment }: AppointmentRowProps) {
   const { t } = useI18n();
 
   return (
-    <div className="mock rounded-inner bg-bg-card shadow-card flex items-start gap-3 p-4">
+    <div className="rounded-inner bg-bg-card shadow-card flex items-start gap-3 p-4">
       {/* Left group: date box + content */}
       <div className="flex min-w-0 flex-1 items-start gap-3">
         {/* Date box */}
@@ -37,20 +37,16 @@ export function AppointmentRow({ appointment }: AppointmentRowProps) {
           )}
 
           {appointment.hasCta && appointment.ctaLabel && (
-            <button
-              type="button"
+            <Button
+              variant="primary"
+              icon={{ name: "calendar", position: "left" }}
               aria-label={t("{label}: {title}", {
                 label: t(appointment.ctaLabel),
                 title: t(appointment.title),
               })}
-              className="rounded-inner text-text-primary shadow-cta flex h-11 w-fit items-center gap-2.5 px-4 font-semibold dark:text-emerald-950"
-              style={{
-                background: "linear-gradient(to right, var(--gradient-brand-from), var(--gradient-brand-to))",
-              }}
             >
-              <Icon name="calendar" size={20} />
               {t(appointment.ctaLabel)}
-            </button>
+            </Button>
           )}
         </div>
       </div>

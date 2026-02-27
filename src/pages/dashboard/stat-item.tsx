@@ -10,7 +10,7 @@ export function StatItem({ stat }: StatItemProps) {
   const { t } = useI18n();
 
   return (
-    <div className="mock rounded-inner bg-bg-card shadow-card flex items-center gap-3 p-4">
+    <div className="rounded-inner bg-bg-card shadow-card flex items-center gap-3 p-4">
       <GradientBox
         gradientFrom={stat.gradientFrom}
         gradientTo={stat.gradientTo}

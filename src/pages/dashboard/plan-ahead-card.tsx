@@ -1,8 +1,10 @@
 import { useState } from "react";
 import type { TabItem } from "@/components/ui/tab-switcher";
 import { TabSwitcher } from "@/components/ui/tab-switcher";
-import { appointments } from "@/data/mock-dashboard";
+import { useGetCalendarUpcoming } from "@/hooks/useDashboard";
 import { useI18n } from "@/hooks/useI18n";
+import type { TranslationKey } from "@/i18n/ro";
+import type { Appointment, BadgeVariant, CalendarUpcomingItem } from "@/types/dashboard";
 import { AppointmentRow } from "./appointment-row";
 import { CalendarView } from "./calendar-view";
 
@@ -13,9 +15,61 @@ const viewTabs: TabItem<ViewMode>[] = [
   { value: "calendar", label: "Calendar", icon: "tab-calendar" },
 ];
 
+const MONTH_NAMES = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+function statusToBadge(status: CalendarUpcomingItem["status"]): BadgeVariant {
+  switch (status) {
+    case "completed": return "optimal";
+    case "cancelled": return "elevated";
+    case "pending":
+    default: return "pending";
+  }
+}
+
+function statusToLabel(status: CalendarUpcomingItem["status"]): TranslationKey {
+  switch (status) {
+    case "completed": return "Optimal";
+    case "cancelled": return "Elevated";
+    case "pending":
+    default: return "Pending";
+  }
+}
+
+function mapUpcomingToAppointment(item: CalendarUpcomingItem): Appointment {
+  const date = new Date(item.scheduled_date);
+  return {
+    month: MONTH_NAMES[date.getMonth()] ?? "",
+    day: String(date.getDate()),
+    title: item.title as TranslationKey,
+    description: (item.doctor_name ?? "") as TranslationKey | "",
+    badge: statusToBadge(item.status),
+    badgeLabel: statusToLabel(item.status),
+    hasCta: item.status === "pending",
+    ctaLabel: item.status === "pending" ? "Confirm Appointment" : undefined,
+  };
+}
+
+function AppointmentSkeleton() {
+  return (
+    <div className="rounded-inner bg-bg-card shadow-card animate-pulse flex items-start gap-3 p-4">
+      <div className="bg-bg-progress-track rounded-inner h-20 w-20 shrink-0" />
+      <div className="flex flex-1 flex-col gap-2 pt-1">
+        <div className="bg-bg-progress-track h-4 w-40 rounded" />
+        <div className="bg-bg-progress-track h-3 w-28 rounded" />
+      </div>
+      <div className="bg-bg-progress-track h-6 w-20 rounded-full" />
+    </div>
+  );
+}
+
 export function PlanAheadCard() {
   const { t } = useI18n();
   const [view, setView] = useState<ViewMode>("list");
+  const { data: upcoming, isLoading } = useGetCalendarUpcoming();
+
+  const appointments: Appointment[] = upcoming
+    ? upcoming.map(mapUpcomingToAppointment)
+    : [];
 
   return (
     <section
@@ -42,12 +96,23 @@ export function PlanAheadCard() {
 
       {view === "list" && (
         <div className="mt-4 flex flex-col gap-4">
-          {appointments.map((appointment) => (
-            <AppointmentRow
-              key={`${appointment.month}-${appointment.day}`}
-              appointment={appointment}
-            />
-          ))}
+          {isLoading ? (
+            <>
+              <AppointmentSkeleton />
+              <AppointmentSkeleton />
+            </>
+          ) : appointments.length > 0 ? (
+            appointments.map((appointment, i) => (
+              <AppointmentRow
+                key={`${appointment.month}-${appointment.day}-${i}`}
+                appointment={appointment}
+              />
+            ))
+          ) : (
+            <p className="text-text-secondary py-8 text-center">
+              {t("No upcoming appointments")}
+            </p>
+          )}
         </div>
       )}
 

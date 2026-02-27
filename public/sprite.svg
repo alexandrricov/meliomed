@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
   style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="icon__x" viewBox="0 0 24 24" fill="none">
+    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
   <symbol id="icon__drop" viewBox="0 0 32 32" fill="none">
     <path d="M24.6165 15.7564L16 1.25L7.3835 15.7564C6.52675 17.231 6 18.9217 6 20.75C6 26.2727 10.4771 30.75 16 30.75C21.5229 30.75 26 26.2727 26 20.75C26 18.9217 25.4733 17.231 24.6165 15.7564Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
@@ -160,5 +163,10 @@
 
   <symbol id="icon__moon" viewBox="0 0 24 24" fill="none">
     <path d="M21.75 15.5a9.75 9.75 0 0 1-13.25-13.25A9.75 9.75 0 1 0 21.75 15.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon__plus-circle" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="9.25" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
 </svg>

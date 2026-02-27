@@ -10,7 +10,7 @@ export function MetricRow({ metric }: MetricRowProps) {
   const { t } = useI18n();
 
   return (
-    <div className="mock flex items-center gap-3">
+    <div className="flex items-center gap-3">
       <div
         className="rounded-inner flex h-10 w-10 shrink-0 items-center justify-center text-2xl"
         style={{ backgroundColor: metric.accentBg }}

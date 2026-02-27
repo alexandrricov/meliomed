@@ -57,6 +57,9 @@ export async function api<T = unknown>(
 
   const apiBase = getApiBase();
   const requestHeaders = new Headers(headers);
+  if (!requestHeaders.has("Accept")) {
+    requestHeaders.set("Accept", "application/json");
+  }
   const token = getAccessToken();
 
   let body = rest.body ?? undefined;

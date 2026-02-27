@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { Icon } from "@/components/ui/icon";
 import { navItems } from "@/data/mock-dashboard";
+import { useGetMe } from "@/hooks/useAuth";
 import { useI18n } from "@/hooks/useI18n";
 
 function Logo({ compact = false }: { compact?: boolean }) {
@@ -49,11 +50,12 @@ function NotificationBell() {
 export function DashboardHeader() {
   const { pathname } = useLocation();
   const { t } = useI18n();
+  const { data: user } = useGetMe();
 
   return (
     <header className="border-border-divider bg-bg-header sticky top-0 z-50 border-b backdrop-blur-[34px]">
       {/* Desktop header */}
-      <div className="mx-auto hidden h-16 max-w-360 items-center gap-4 px-30 lg:flex">
+      <div className="mx-auto hidden h-16 max-w-360 items-center gap-4 px-6 lg:flex">
         <Logo />
 
         <nav aria-label={t("Main navigation")} className="ml-8">
@@ -91,8 +93,8 @@ export function DashboardHeader() {
           <div className="bg-border-divider h-10 w-px" aria-hidden="true" />
 
           <Link to="/user" className="flex items-center gap-2" aria-label={t("User profile")}>
-            <span className="mock text-text-dark text-small font-semibold tracking-[0.28px]">
-              {t("Hello, {name}", { name: "Tatiana" })}
+            <span className="text-text-dark text-small font-semibold tracking-[0.28px]">
+              {t("Hello, {name}", { name: user?.first_name ?? "..." })}
             </span>
             <div
               className="flex h-8 w-8 items-center justify-center rounded-full"
