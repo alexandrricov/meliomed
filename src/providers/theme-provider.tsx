@@ -43,9 +43,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.classList.toggle("dark", isDark);
 
     // Sync browser chrome color (Safari address bar on iOS)
-    const metas = document.querySelectorAll('meta[name="theme-color"]');
-    const color = isDark ? "#1a1d27" : "#ffffff";
-    metas.forEach((meta) => meta.setAttribute("content", color));
+    // Remove and re-insert to force Safari to re-read the value
+    const oldMeta = document.querySelector('meta[name="theme-color"]');
+    if (oldMeta) oldMeta.remove();
+    const meta = document.createElement("meta");
+    meta.name = "theme-color";
+    meta.content = isDark ? "#1a1d27" : "#ffffff";
+    document.head.appendChild(meta);
   }, [resolved]);
 
   const setTheme = useCallback((next: Theme) => {
