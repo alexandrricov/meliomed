@@ -127,7 +127,7 @@ export function CalendarView() {
   const upcomingEvents = events.filter((e) => e.badge === "pending" || e.badge === "optimal");
 
   return (
-    <div className={`${apiEvents ? "" : "mock "}mt-4 flex flex-col`}>
+    <div className="mt-4 flex flex-col">
       <div className="rounded-inner flex flex-col">
         {/* Calendar grid section */}
         <div className="p-4">

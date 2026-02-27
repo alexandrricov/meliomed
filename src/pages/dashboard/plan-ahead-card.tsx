@@ -49,19 +49,6 @@ function mapUpcomingToAppointment(item: CalendarUpcomingItem): Appointment {
   };
 }
 
-function AppointmentSkeleton() {
-  return (
-    <div className="rounded-inner bg-bg-card shadow-card animate-pulse flex items-start gap-3 p-4">
-      <div className="bg-bg-progress-track rounded-inner h-20 w-20 shrink-0" />
-      <div className="flex flex-1 flex-col gap-2 pt-1">
-        <div className="bg-bg-progress-track h-4 w-40 rounded" />
-        <div className="bg-bg-progress-track h-3 w-28 rounded" />
-      </div>
-      <div className="bg-bg-progress-track h-6 w-20 rounded-full" />
-    </div>
-  );
-}
-
 export function PlanAheadCard() {
   const { t } = useI18n();
   const [view, setView] = useState<ViewMode>("list");
@@ -94,14 +81,9 @@ export function PlanAheadCard() {
         />
       </div>
 
-      {view === "list" && (
+      {view === "list" && !isLoading && (
         <div className="mt-4 flex flex-col gap-4">
-          {isLoading ? (
-            <>
-              <AppointmentSkeleton />
-              <AppointmentSkeleton />
-            </>
-          ) : appointments.length > 0 ? (
+          {appointments.length > 0 ? (
             appointments.map((appointment, i) => (
               <AppointmentRow
                 key={`${appointment.month}-${appointment.day}-${i}`}
